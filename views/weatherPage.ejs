@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Weather Page</title>
+
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+      <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .temperature-container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    </style>
+
+  </head>
+
+<body class="text-center" >
+    
+    <main class="form-signin">
+     <h1><%= weatherDetails.city%>, <%= weatherDetails.country%></h1>
+     <p style="color:orangered"><%= weatherDetails.time %></p>
+     <div class="temperature-container">
+       <div>
+        <img src=<%= weatherDetails.imageURL%> alt="weather-icon">
+       </div>
+       <div>
+        <span class="temperature"><%= weatherDetails.temperature%>°C</span>
+       </div>
+    </div>
+     
+     <p>
+        Feels like <%= weatherDetails.feelsLike%>°C. <%= weatherDetails.description%>.
+     </p>
+     <ul class="description">
+         <li>Humidity: <%= weatherDetails.humidity%>%</li>
+         <li>Visibility: <%= weatherDetails.visibility%>km</li>
+         <li>Wind: <%= weatherDetails.wind%> m/s</li>
+     </ul>
+    </main>
+    
+    
+        
+      </body>
+
+</html>
